@@ -9,7 +9,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://upload.wikimedia.org/wikipedia/en/a/a7/God_of_War_4_cover.jpg",
         fallback: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=800&q=80",
-        description: "Actie-avontuur met sterke verhaallijn."
+        description: "Een episch actie-avontuur met een meeslepende verhaallijn. Volg Kratos en zijn zoon door Noorsche mythologie vol spectaculaire gevechten, puzzels en versterkingen. Adembenemende graphics en cinematic gameplay."
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const gameProducts = [
         condition: "Goed",
         image: "https://upload.wikimedia.org/wikipedia/en/1/15/The_Elder_Scrolls_V_Skyrim_cover.png",
         fallback: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=800&q=80",
-        description: "Open-world RPG met honderden quests."
+        description: "Verken een uitgebreide open-world vol geschiedenis, magie en monsters. Honderden quests, dynamische kampagne tegen draken, en eindeloze mogelijkheden voor character customization. Creëer je eigen avontuur!"
     },
     {
         id: 3,
@@ -33,7 +33,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://upload.wikimedia.org/wikipedia/en/b/b5/MarioKart8Boxart.jpg",
         fallback: "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?auto=format&fit=crop&w=800&q=80",
-        description: "Racen met vrienden."
+        description: "Het populairste racespel op Nintendo Switch. Race met vrienden en familie over kleurrijke banen, gebruik power-ups strategisch en beheerst de shortcuts. Multiplayer fun voor alle leeftijden!"
     },
     {
         id: 4,
@@ -45,7 +45,7 @@ const gameProducts = [
         condition: "Goed",
         image: "https://upload.wikimedia.org/wikipedia/en/7/70/Fallout_4_cover_art.jpg",
         fallback: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
-        description: "Post-apocalyptische RPG."
+        description: "Overleven in een post-apocalyptische wereld vol mutanten en falen morele keuzes. Bouw je basis uit, recruit companions, en ontdek wat er van Amerika over is. Immersieve RPG met oneindig veel playstyles."
     },
     {
         id: 5,
@@ -57,7 +57,7 @@ const gameProducts = [
         condition: "Licht gebruikt",
         image: "https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-23/common/f23-featured-image-16x9.jpg.adapt.crop16x9.1023w.jpg",
         fallback: "https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=800&q=80",
-        description: "Voetbalgame met career mode."
+        description: "De ultieme voetbalsimulator met eredivisie clubs en sterren. Speel carrièremode, bouw je favoriete team op in Ultimate Team, en neem het op tegen spelers online. Realistische voetbalacties en tactische diepgang."
     },
     {
         id: 6,
@@ -69,7 +69,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://upload.wikimedia.org/wikipedia/en/1/14/Halo_Infinite.png",
         fallback: "https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=800&q=80",
-        description: "Sci-fi shooter."
+        description: "Klassieke sci-fi shooter met futuristische wapens en high-octane multipayer combat. Verken de Halo ring in de campagne, gebruik jetpack en grappling hooks tactisch, en domineer online in intense 12vs12 gevechten."
     },
     {
         id: 7,
@@ -81,7 +81,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://www.zelda.com/breath-of-the-wild/assets/icons/BOTW-Share_icon.jpg",
         fallback: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=800&q=80",
-        description: "Open-world avontuur."
+        description: "Een revolutionair open-world avontuur waar je Hyrule in willekeurige volgorde kunt verkennen. Klim overal, experimenteer met Physics puzzels, en geniet van totale vrijheid. Een meesterwerk van game design."
     },
     {
         id: 8,
@@ -93,7 +93,7 @@ const gameProducts = [
         condition: "Goed",
         image: "https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg",
         fallback: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=80",
-        description: "Fantasy RPG."
+        description: "Speelt als de beruchte Witcher Geralt van Rivia in een dark fantasy wereld. Accepteer contracts tegen monsters, maak gevolgen-volle keuzes met permanente effecten, en geniet van een Prijs-winnaar verhaal. Expansies gratis inbegrepen!"
     },
     {
         id: 9,
@@ -105,7 +105,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg",
         fallback: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
-        description: "Western open-world game."
+        description: "Leef als outlaw Arthur Morgan in de Wilde Westen. Epic verhaal over verraad en lojaliteit, realistische details overal, en enorme open wereld vol activiteiten. Meesterwerk van immersieve storytelling."
     },
     {
         id: 10,
@@ -117,7 +117,7 @@ const gameProducts = [
         condition: "Goed",
         image: "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg",
         fallback: "https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=800&q=80",
-        description: "Futuristische RPG."
+        description: "Ontsnap aan de neon-verlichte stad Night City als gecyborg ingestelde commando. Epic main questline met branching storylines, bodyware upgrades, en baanbrekende AI. Actie-RPG van volgende generatie."
     },
 
     {
@@ -130,7 +130,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://www.minecraft.net/content/dam/games/minecraft/key-art/MC-Vanilla_Block-Render_Creeper.jpg",
         fallback: "https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=800&q=80",
-        description: "Bouwen en survival."
+        description: "Bouw, verken en overlev in oneindige werelden van blokken. Creatieve survival modus met monsters, of freebuild in creative mode. Multiplayer co-op voor eindeloos plezier met vrienden. Alle leeftijden genieten!"
     },
     {
         id: 12,
@@ -142,7 +142,7 @@ const gameProducts = [
         condition: "Goed",
         image: "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png",
         fallback: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
-        description: "Open-world actie."
+        description: "Criminaliteit, actie en chaos in Los Santos. Drie speelbare karakters met hun eigen verhalen, diefstalles plannen met medespelers, en eindeloze activiteiten. Legendaire open-world gameplay die nog steeds overweldigend is."
     },
 
     {
@@ -155,7 +155,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg",
         fallback: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=800&q=80",
-        description: "Hardcore fantasy RPG."
+        description: "Legendaire fantasy RPG met verschrikkelijke bosses en gotische setting. Creëer je character, pas spells aan, en verken een enorme open wereld vol mysteries. Samen ontworpen door FromSoftware en George R.R. Martin. GeWaarschuwing: Erg moeilijk!"
     },
     {
         id: 14,
@@ -167,7 +167,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://upload.wikimedia.org/wikipedia/en/5/5e/Spider-Man_Miles_Morales_cover.jpg",
         fallback: "https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=800&q=80",
-        description: "Superheld actie."
+        description: "Swing door New York als Miles Morales in dit spannende superheld-avontuur. Dynamische strijd met bioelektrische krachten, hartscheurende verhaal, en stunning graphics. Verfrolling en actie gecombineerd perfectie."
     },
     {
         id: 15,
@@ -179,7 +179,7 @@ const gameProducts = [
         condition: "Goed",
         image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2208920/header.jpg",
         fallback: "https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=800&q=80",
-        description: "Viking avontuur."
+        description: "Verken Engeland als Noors raider Eivor in dit Viking-epos. Bouw je nederzetting uit, sluit allianties en voer veldslagen. Schitterende wereld, aangrijpende verhalen, en pure middeleeuwse chaos. 60+ uren gameplay!"
     },
     {
         id: 16,
@@ -191,7 +191,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/header.jpg",
         fallback: "https://images.unsplash.com/photo-1520975922284-9a1b7c8b0f9c?auto=format&fit=crop&w=800&q=80",
-        description: "Magische open-world RPG."
+        description: "Leef je droom uit als toevenaar op Hogwarts School. Leer toverspeuken, maak vrienden, en ontdek geheimen. Veel keuzes beïnvloeden het verhaal, prachtige hogwarts setting, en pure magic. Harry Potter fans worden vertoverd!"
     },
     {
         id: 17,
@@ -202,7 +202,7 @@ const gameProducts = [
         pegi: "18",
         image: "https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mwii/MWII-REVEAL-TOUT.jpg",
         fallback: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
-        description: "Multiplayer shooter."
+        description: "Intense multiplayer-ervaring met nauwkeurige wapenopmaken en snelle gevechten. Campaign volgt een professioneel team in geopolitieke chaos. Waarom wacht je? Moderne oorlogsvoering op z'n best!"
     },
     {
         id: 18,
@@ -214,7 +214,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_AnimalCrossingNewHorizons.jpg",
         fallback: "https://images.unsplash.com/photo-1608889175679-7a3c2b3a3c7d?auto=format&fit=crop&w=800&q=80",
-        description: "Relaxte eiland game."
+        description: "Rust uit op je eigen eiland vol schattige dieren. Decoreer naar wens, vang vis, verzamel meubilair en voel je zen-achtig. Geen druk, geen deadlines - pure relaxatie. Perfecte escape-game voor iedereen."
     },
     {
         id: 19,
@@ -226,7 +226,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://www.gran-turismo.com/images/c/i1v1o1.jpg",
         fallback: "https://images.unsplash.com/photo-1511910849309-0dffb8788f1f?auto=format&fit=crop&w=800&q=80",
-        description: "Realistische races."
+        description: "Ultiem raceservaring met fysicamente authentieke simulatie. Kies uit 400+ voertuigen, race op legendarische circuits, en tunen auto's precies. Enkele controller trillingen in realistische handling. Racegames op hun best."
     },
     {
         id: 20,
@@ -238,7 +238,7 @@ const gameProducts = [
         condition: "Goed",
         image: "https://upload.wikimedia.org/wikipedia/en/2/2c/Resident_Evil_Village.png",
         fallback: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
-        description: "Horror survival."
+        description: "Overleven in een spookachtig Europees dorp vol vampires en monsters. Beperkte munitie forceert je tot tactische keuzes. Intense horror-ervaring met cinematische storytelling. Niet voor zwakken van hart!"
     },
     {
         id: 21,
@@ -250,7 +250,7 @@ const gameProducts = [
         condition: "Zeer goed",
         image: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_1.25/c_scale,w_1200/ncom/en_US/games/switch/s/super-smash-bros-ultimate-switch/hero",
         fallback: "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?auto=format&fit=crop&w=800&q=80",
-        description: "Nintendo fighter game."
+        description: "Ultieme Nintendo fighter met 89 speelbare karakters. Mario tot Zelda, allemaal kunnen elkaar aftuigen. Casual en competitief gameplay, Online tournaments, en endless fun. De definitieve Nintendo-feestgame."
     },
     {
         id: 22,
@@ -262,7 +262,7 @@ const gameProducts = [
         condition: "Goed",
         image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1517290/header.jpg",
         fallback: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
-        description: "Large-scale shooter."
+        description: "Chaos in massive 128-speler gevechten op dynamische kaarten. Jeeps, helicopters, én dreigingen van de omgeving geven elk moment spanning. Team-gebaseerde operaties met specialisten met unieke skills. Oorlog op groot karakter."
     }
 ];
 
