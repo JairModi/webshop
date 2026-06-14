@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Test.css">
+    <title>Games kopen | GameCycle</title>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Hoofdnavigatie">
+            <a class="brand" href="Home.html"><span class="brand-mark">GC</span><span>GameCycle</span></a>
+            <div class="nav-links">
+                <a href="Producten.html">Games</a>
+                <a href="OverOns.html">Over ons</a>
+                <a href="Service.html">Service</a>
+                <a href="Contact.html">Contact</a>
+            </div>
+            <button class="cart-button" type="button" data-cart-open>Winkelwagen <span data-cart-count>0</span></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero products-hero">
+            <p class="eyebrow">Alle deals</p>
+            <h1>Koop tweedehands games zonder twijfel.</h1>
+            <p>Filter op platform, vergelijk prijzen en voeg games direct toe aan je winkelwagen.</p>
+        </section>
+
+        <section class="section">
+            <div class="filters" aria-label="Productfilters">
+                <button class="filter active" type="button" data-filter="all">Alles</button>
+                <button class="filter" type="button" data-filter="PlayStation">PlayStation</button>
+                <button class="filter" type="button" data-filter="Xbox">Xbox</button>
+                <button class="filter" type="button" data-filter="Nintendo">Nintendo</button>
+                <button class="filter" type="button" data-filter="PC">PC</button>
+            </div>
+            <div class="product-grid" data-product-grid></div>
+        </section>
+    </main>
+
+    <aside class="cart-drawer" aria-label="Winkelwagen">
+        <div class="cart-header">
+            <h2>Winkelwagen</h2>
+            <button type="button" data-cart-close aria-label="Sluiten">x</button>
+        </div>
+        <div class="cart-items" data-cart-items></div>
+        <div class="totals"><span>Totaal</span><strong data-cart-total>EUR 0,00</strong></div>
+        <a class="button primary full" href="Checkout.php">Naar afrekenen</a>
+    </aside>
+    <script src="shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GameCycle verkoopt betaalbare tweedehands videogames voor PlayStation, Xbox, Nintendo Switch en PC in Nederland.">
+    <link rel="stylesheet" href="Test.css">
+    <title>GameCycle | Tweedehands Videogames</title>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Hoofdnavigatie">
+            <a class="brand" href="Home.html" aria-label="GameCycle homepage">
+                <span class="brand-mark">GC</span>
+                <span>GameCycle</span>
+            </a>
+            <div class="nav-links">
+                <a href="Producten.html">Games</a>
+                <a href="OverOns.html">Over ons</a>
+                <a href="Service.html">Service</a>
+                <a href="Contact.html">Contact</a>
+            </div>
+            <button class="cart-button" type="button" id="cartToggle" aria-label="Winkelwagen openen">
+                Winkelwagen <span id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Tweedehands games. Getest. Betaalbaar. Snel geleverd.</p>
+                <h1>Waarom de volle prijs betalen?</h1>
+                <p>Ontdek goedkope videogames voor PlayStation, Xbox, Nintendo Switch en PC. Bespaar geld, speel meer en koop veilig bij een Nederlandse webshop.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="Producten.html">Bekijk alle games</a>
+                    <a class="button secondary" href="#vertrouwen">Hoe wij controleren</a>
+                </div>
+            </div>
+            <div class="hero-panel" aria-label="Uitgelichte aanbieding">
+                <div class="game-stack">
+                    <div class="game-case red">God of War</div>
+                    <div class="game-case green">Skyrim</div>
+                    <div class="game-case blue">Fallout 4</div>
+                </div>
+                <div class="deal-card">
+                    <span>Deal van de week</span>
+                    <strong>Tot 55% goedkoper dan nieuw</strong>
+                    <small>Gratis verzending vanaf EUR 35</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-band" aria-label="Gaming sfeerbeelden">
+            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80" alt="Gamecontroller op een bureau">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80" alt="Gamer speelt een videogame in donkere kamer">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=80" alt="Retro arcade gaming sfeer">
+        </section>
+
+        <section class="trust-strip" aria-label="Voordelen">
+            <div><strong>14 dagen retour</strong><span>Volgens Nederlands herroepingsrecht</span></div>
+            <div><strong>Geteste discs</strong><span>Elke game wordt gecontroleerd</span></div>
+            <div><strong>Veilig betalen</strong><span>iDEAL, PayPal en kaart</span></div>
+            <div><strong>Voor 17:00 besteld</strong><span>Binnen 1-2 werkdagen verzonden</span></div>
+        </section>
+
+        <section class="section" id="producten">
+            <div class="section-heading">
+                <p class="eyebrow">Populaire deals</p>
+                <h2>Tweedehands games voor elk platform</h2>
+                <p>Alle producten hebben een duidelijke staat, platform, leeftijdsadvies en omschrijving zodat klanten precies weten wat ze kopen.</p>
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <section class="section split" id="vertrouwen">
+            <div>
+                <p class="eyebrow">Vertrouwen opbouwen</p>
+                <h2>Gemaakt voor gamers met een kleiner budget</h2>
+                <p>GameCycle richt zich op gamers van 15 tot 30 jaar die prijzen vergelijken en snel willen weten of een webshop betrouwbaar is.</p>
+                <ul class="check-list">
+                    <li>Elke disc/cartridge wordt getest op werking.</li>
+                    <li>Productpagina's tonen platform, staat, taal, PEGI en levertijd.</li>
+                    <li>Reviews, retourbeleid en contactgegevens staan duidelijk zichtbaar.</li>
+                    <li>De checkout werkt met winkelwagen, aantallen en totaalprijs.</li>
+                </ul>
+            </div>
+            <div class="journey">
+                <h3>Klantreis</h3>
+                <div><strong>1. Aandacht</strong><span>TikTok/Reels met goedkope game-deals.</span></div>
+                <div><strong>2. Interesse</strong><span>Heldere productinfo en prijsvoordeel.</span></div>
+                <div><strong>3. Verlangen</strong><span>Reviews, bestsellers en garanties.</span></div>
+                <div><strong>4. Actie</strong><span>Snelle winkelwagen en kortingscode.</span></div>
+            </div>
+        </section>
+
+        <section class="section reviews" id="reviews">
+            <div class="section-heading">
+                <p class="eyebrow">Klantreviews</p>
+                <h2>Wat gamers zeggen</h2>
+            </div>
+            <div class="review-grid">
+                <article>
+                    <strong>Luca, 17</strong>
+                    <p>"Skyrim was veel goedkoper dan nieuw en kwam netjes binnen. De disc werkte direct."</p>
+                </article>
+                <article>
+                    <strong>Sara, 22</strong>
+                    <p>"Duidelijke staat van het product en snelle levering. Handig voor studenten."</p>
+                </article>
+                <article>
+                    <strong>Yanis, 19</strong>
+                    <p>"Fijn dat ik met iDEAL kan betalen en makkelijk kan zien hoeveel ik bespaar."</p>
+                </article>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 GameCycle B.V. | Tweedehands videogames voor gamers in Nederland.</p>
+    </footer>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Winkelwagen" aria-hidden="true">
+        <div class="cart-header">
+            <h2>Winkelwagen</h2>
+            <button type="button" id="cartClose" aria-label="Winkelwagen sluiten">x</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <form class="checkout" id="checkoutForm">
+            <label for="discount">Kortingscode</label>
+            <div class="discount-row">
+                <input id="discount" name="discount" type="text" placeholder="GAME10">
+                <button type="button" id="applyDiscount">Toepassen</button>
+            </div>
+            <p id="discountMessage" class="discount-message"></p>
+            <div class="totals">
+                <span>Subtotaal</span><strong id="subtotal">EUR 0,00</strong>
+                <span>Verzending</span><strong id="shipping">EUR 3,95</strong>
+                <span>Totaal</span><strong id="total">EUR 0,00</strong>
+            </div>
+            <label for="name">Naam</label>
+            <input id="name" name="name" type="text" required>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required>
+            <label for="payment">Betaalmethode</label>
+            <select id="payment" name="payment" required>
+                <option value="">Kies betaalmethode</option>
+                <option>iDEAL</option>
+                <option>PayPal</option>
+                <option>Creditcard</option>
+            </select>
+            <label class="terms">
+                <input type="checkbox" required>
+                Ik ga akkoord met de algemene voorwaarden en het retourbeleid.
+            </label>
+            <button class="button primary full" type="submit">Bestelling plaatsen</button>
+            <p id="orderMessage" class="order-message" role="status"></p>
+        </form>
+    </aside>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                title: "God of War",
+                platform: "PlayStation",
+                price: 19.99,
+                oldPrice: 39.99,
+                pegi: "18",
+                condition: "Zeer goed",
+                language: "Engels met Nederlandse ondertiteling",
+                image: "https://upload.wikimedia.org/wikipedia/en/a/a7/God_of_War_4_cover.jpg",
+                fallback: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=800&q=80",
+                description: "Actie-avontuur met sterke verhaallijn. Disc en hoes gecontroleerd, geschikt voor PS4 en speelbaar op PS5."
+            },
+           
+            {
+                id: 3,
+                title: "Mario Kart 8 Deluxe",
+                platform: "Nintendo",
+                price: 34.99,
+                oldPrice: 54.99,
+                pegi: "3",
+                condition: "Zeer goed",
+                language: "Nederlands beschikbaar",
+                image: "https://upload.wikimedia.org/wikipedia/en/b/b5/MarioKart8Boxart.jpg",
+                fallback: "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?auto=format&fit=crop&w=800&q=80",
+                description: "Racegame voor Nintendo Switch met multiplayer. Cartridge getest, ideaal voor vrienden en familie."
+            },
+  
+            {
+                id: 6,
+                title: "Halo Infinite",
+                platform: "Xbox",
+                price: 17.99,
+                oldPrice: 49.99,
+                pegi: "16",
+                condition: "Zeer goed",
+                language: "Engels",
+                image: "https://upload.wikimedia.org/wikipedia/en/1/14/Halo_Infinite.png",
+                fallback: "https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=800&q=80",
+                description: "Sci-fi shooter voor Xbox One en Series X. Getest op installatie en gameplay."
+            },
+      
+          
+       
+        ];
+
+        const cart = new Map();
+        let discountActive = false;
+
+        const productGrid = document.getElementById("productGrid");
+        const cartDrawer = document.getElementById("cartDrawer");
+        const cartItems = document.getElementById("cartItems");
+        const formatter = new Intl.NumberFormat("nl-NL", { style: "currency", currency: "EUR" });
+
+        function renderProducts(filter = "all") {
+            productGrid.innerHTML = "";
+            products
+                .filter(product => filter === "all" || product.platform === filter)
+                .forEach(product => {
+                    const card = document.createElement("article");
+                    card.className = "product-card";
+                    card.innerHTML = `
+                        <div class="product-photo-wrap">
+                            <img class="product-photo" src="${product.image}" alt="Coverfoto van ${product.title}" onerror="this.src='${product.fallback || product.image}'">
+                            <span class="shine"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-title">
+                                <h3>${product.title}</h3>
+                                <span>PEGI ${product.pegi}</span>
+                            </div>
+                            <p>${product.description}</p>
+                            <dl>
+                                <div><dt>Staat</dt><dd>${product.condition}</dd></div>
+                                <div><dt>Taal</dt><dd>${product.language}</dd></div>
+                                <div><dt>Levering</dt><dd>1-2 werkdagen</dd></div>
+                            </dl>
+                            <div class="price-row">
+                                <div><strong>${formatter.format(product.price)}</strong><span>${formatter.format(product.oldPrice)}</span></div>
+                                <button type="button" data-id="${product.id}">In winkelwagen</button>
+                            </div>
+                        </div>
+                    `;
+                    productGrid.appendChild(card);
+                });
+        }
+
+        function updateCart() {
+            cartItems.innerHTML = "";
+            let subtotal = 0;
+            let count = 0;
+
+            cart.forEach((quantity, id) => {
+                const product = products.find(item => item.id === id);
+                subtotal += product.price * quantity;
+                count += quantity;
+                const row = document.createElement("div");
+                row.className = "cart-item";
+                row.innerHTML = `
+                    <div>
+                        <strong>${product.title}</strong>
+                        <span>${product.platform} - ${formatter.format(product.price)}</span>
+                    </div>
+                    <div class="quantity">
+                        <button type="button" data-action="minus" data-id="${id}">-</button>
+                        <span>${quantity}</span>
+                        <button type="button" data-action="plus" data-id="${id}">+</button>
+                    </div>
+                `;
+                cartItems.appendChild(row);
+            });
+
+            if (cart.size === 0) {
+                cartItems.innerHTML = "<p class='empty-cart'>Je winkelwagen is leeg.</p>";
+            }
+
+            const discount = discountActive ? subtotal * 0.1 : 0;
+            const shipping = subtotal >= 35 || subtotal === 0 ? 0 : 3.95;
+            const total = Math.max(subtotal - discount + shipping, 0);
+
+            document.getElementById("cartCount").textContent = count;
+            document.getElementById("subtotal").textContent = formatter.format(subtotal);
+            document.getElementById("shipping").textContent = shipping === 0 ? "Gratis" : formatter.format(shipping);
+            document.getElementById("total").textContent = formatter.format(total);
+        }
+
+        function openCart() {
+            cartDrawer.classList.add("open");
+            cartDrawer.setAttribute("aria-hidden", "false");
+        }
+
+        document.addEventListener("click", event => {
+            const addButton = event.target.closest(".price-row button");
+            if (addButton) {
+                const id = Number(addButton.dataset.id);
+                cart.set(id, (cart.get(id) || 0) + 1);
+                updateCart();
+                openCart();
+            }
+
+            const quantityButton = event.target.closest(".quantity button");
+            if (quantityButton) {
+                const id = Number(quantityButton.dataset.id);
+                const next = quantityButton.dataset.action === "plus" ? (cart.get(id) || 0) + 1 : (cart.get(id) || 0) - 1;
+                if (next <= 0) cart.delete(id);
+                else cart.set(id, next);
+                updateCart();
+            }
+        });
+
+        document.querySelectorAll(".filter").forEach(button => {
+            button.addEventListener("click", () => {
+                document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
+                button.classList.add("active");
+                renderProducts(button.dataset.filter);
+            });
+        });
+
+        document.getElementById("cartToggle").addEventListener("click", openCart);
+        document.getElementById("cartClose").addEventListener("click", () => {
+            cartDrawer.classList.remove("open");
+            cartDrawer.setAttribute("aria-hidden", "true");
+        });
+
+        document.getElementById("applyDiscount").addEventListener("click", () => {
+            const code = document.getElementById("discount").value.trim().toUpperCase();
+            const message = document.getElementById("discountMessage");
+            discountActive = code === "GAME10";
+            message.textContent = discountActive ? "Kortingscode toegepast: 10% korting." : "Gebruik code GAME10 voor 10% korting.";
+            updateCart();
+        });
+
+        document.getElementById("checkoutForm").addEventListener("submit", event => {
+            event.preventDefault();
+            const message = document.getElementById("orderMessage");
+            if (cart.size === 0) {
+                message.textContent = "Voeg eerst een game toe aan je winkelwagen.";
+                return;
+            }
+            message.textContent = "Bedankt! Je bestelling is ontvangen. Je ontvangt een bevestiging per e-mail.";
+            cart.clear();
+            discountActive = false;
+            updateCart();
+        });
+
+        renderProducts();
+        updateCart();
+
+        const animatedHero = document.querySelector(".hero-panel");
+        if (animatedHero) {
+            animatedHero.addEventListener("mousemove", event => {
+                const rect = animatedHero.getBoundingClientRect();
+                const x = ((event.clientX - rect.left) / rect.width - 0.5) * 14;
+                const y = ((event.clientY - rect.top) / rect.height - 0.5) * 14;
+                animatedHero.style.setProperty("--tilt-x", `${-y}deg`);
+                animatedHero.style.setProperty("--tilt-y", `${x}deg`);
+            });
+            animatedHero.addEventListener("mouseleave", () => {
+                animatedHero.style.setProperty("--tilt-x", "0deg");
+                animatedHero.style.setProperty("--tilt-y", "0deg");
+            });
+        }
+
+        const sparkLayer = document.createElement("div");
+        sparkLayer.className = "spark-layer";
+        for (let i = 0; i < 18; i += 1) {
+            const spark = document.createElement("span");
+            spark.style.setProperty("--x", `${Math.random() * 100}%`);
+            spark.style.setProperty("--delay", `${Math.random() * 8}s`);
+            spark.style.setProperty("--size", `${5 + Math.random() * 8}px`);
+            sparkLayer.appendChild(spark);
+        }
+        document.body.appendChild(sparkLayer);
+    </script>
+</body>
+</html>

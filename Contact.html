@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Test.css">
+    <title>Contact | GameCycle</title>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Hoofdnavigatie">
+            <a class="brand" href="Home.html"><span class="brand-mark">GC</span><span>GameCycle</span></a>
+            <div class="nav-links">
+                <a href="Producten.html">Games</a>
+                <a href="OverOns.html">Over ons</a>
+                <a href="Service.html">Service</a>
+                <a href="Contact.html">Contact</a>
+            </div>
+            <a class="cart-button" href="Producten.html">Shop</a>
+        </nav>
+    </header>
+    <main>
+        <section class="page-hero contact-hero">
+            <p class="eyebrow">Klantenservice</p>
+            <h1>Vraag over je game of bestelling?</h1>
+            <p>Stuur ons een bericht. We reageren op werkdagen binnen 24 uur.</p>
+        </section>
+        <section class="section contact-layout">
+            <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('p').textContent='Bericht verzonden. We nemen snel contact op.';">
+                <label>Naam<input type="text" required></label>
+                <label>E-mail<input type="email" required></label>
+                <label>Onderwerp<select required><option>Bestelling</option><option>Retour</option><option>Productvraag</option></select></label>
+                <label>Bericht<textarea rows="6" required></textarea></label>
+                <button class="button primary" type="submit">Versturen</button>
+                <p class="order-message" role="status"></p>
+            </form>
+            <div class="legal-grid contact-cards">
+                <article><h3>Adres</h3><p>GameCycle B.V.<br>Gamelaan 12<br>3511 AB Utrecht</p></article>
+                <article><h3>Bedrijfsgegevens</h3><p>KvK: 81234567<br>BTW: NL123456789B01</p></article>
+                <article><h3>Contact</h3><p>support@gamecycle.nl<br>030 123 4567</p></article>
+            </div>
+        </section>
+    </main>
+    <script src="shop.js"></script>
+</body>
+</html>
