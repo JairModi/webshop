@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
     <link rel="stylesheet" href="Test.css">
     <title>Contact | GameCycle</title>
 </head>
@@ -26,11 +27,11 @@
             <p>Stuur ons een bericht. We reageren op werkdagen binnen 24 uur.</p>
         </section>
         <section class="section contact-layout">
-            <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('p').textContent='Bericht verzonden. We nemen snel contact op.';">
-                <label>Naam<input type="text" required></label>
-                <label>E-mail<input type="email" required></label>
-                <label>Onderwerp<select required><option>Bestelling</option><option>Retour</option><option>Productvraag</option></select></label>
-                <label>Bericht<textarea rows="6" required></textarea></label>
+            <form class="contact-form" id="contactForm">
+                <label>Naam<input type="text" name="contactName" required></label>
+                <label>E-mail<input type="email" name="contactEmail" required></label>
+                <label>Onderwerp<select name="contactSubject" required><option>Bestelling</option><option>Retour</option><option>Productvraag</option></select></label>
+                <label>Bericht<textarea name="contactMessage" rows="6" required></textarea></label>
                 <button class="button primary" type="submit">Versturen</button>
                 <p class="order-message" role="status"></p>
             </form>

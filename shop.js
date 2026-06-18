@@ -269,8 +269,18 @@ const gameProducts = [
 const money = new Intl.NumberFormat("nl-NL", { style: "currency", currency: "EUR" });
 const cartKey = "gamecycle-cart";
 
+function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.appendChild(document.createTextNode(String(str)));
+    return div.innerHTML;
+}
+
 function readCart() {
-    return JSON.parse(localStorage.getItem(cartKey) || "{}");
+    try {
+        return JSON.parse(localStorage.getItem(cartKey) || "{}");
+    } catch (_) {
+        return {};
+    }
 }
 
 function writeCart(cart) {
@@ -300,25 +310,32 @@ function renderProducts(filter = "all") {
         .forEach(product => {
             const card = document.createElement("article");
             card.className = "product-card reveal-card";
+            const safeTitle = escapeHtml(product.title);
+            const safePegi = escapeHtml(product.pegi);
+            const safeDesc = escapeHtml(product.description);
+            const safePlatform = escapeHtml(product.platform);
+            const safeCondition = escapeHtml(product.condition);
+            const safeImage = encodeURI(product.image);
+            const safeFallback = encodeURI(product.fallback || product.image);
             card.innerHTML = `
                 <div class="product-photo-wrap">
-                    <img class="product-photo" src="${product.image}" alt="Coverfoto van ${product.title}" onerror="this.src='${product.fallback || product.image}'">
+                    <img class="product-photo" src="${safeImage}" alt="Coverfoto van ${safeTitle}" onerror="this.onerror=null;this.src='${safeFallback}'">
                     <span class="shine"></span>
                 </div>
                 <div class="product-info">
                     <div class="product-title">
-                        <h3>${product.title}</h3>
-                        <span>PEGI ${product.pegi}</span>
+                        <h3>${safeTitle}</h3>
+                        <span>PEGI ${safePegi}</span>
                     </div>
-                    <p>${product.description}</p>
+                    <p>${safeDesc}</p>
                     <dl>
-                        <div><dt>Platform</dt><dd>${product.platform}</dd></div>
-                        <div><dt>Staat</dt><dd>${product.condition}</dd></div>
+                        <div><dt>Platform</dt><dd>${safePlatform}</dd></div>
+                        <div><dt>Staat</dt><dd>${safeCondition}</dd></div>
                         <div><dt>Levering</dt><dd>1-2 werkdagen</dd></div>
                     </dl>
                     <div class="price-row">
                         <div><strong>${money.format(product.price)}</strong><span>${money.format(product.oldPrice)}</span></div>
-                        <button type="button" data-add="${product.id}">In winkelwagen</button>
+                        <button type="button" data-add="${Number(product.id)}">In winkelwagen</button>
                     </div>
                 </div>
             `;
@@ -343,7 +360,7 @@ function renderCart() {
         if (items) {
             const row = document.createElement("div");
             row.className = "cart-item";
-            row.innerHTML = `<div><strong>${product.title}</strong><span>${qty} x ${money.format(product.price)}</span></div><button type="button" data-remove="${id}">Verwijder</button>`;
+            row.innerHTML = `<div><strong>${escapeHtml(product.title)}</strong><span>${Number(qty)} x ${money.format(product.price)}</span></div><button type="button" data-remove="${Number(id)}">Verwijder</button>`;
             items.appendChild(row);
         }
     });
@@ -454,6 +471,11 @@ function createSparkLayer() {
     }
     document.body.appendChild(layer);
 }
+
+document.getElementById("contactForm")?.addEventListener("submit", function(event) {
+    event.preventDefault();
+    this.querySelector(".order-message").textContent = "Bericht verzonden. We nemen snel contact op.";
+});
 
 renderProducts();
 renderCart();
