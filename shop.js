@@ -200,6 +200,7 @@ const gameProducts = [
         price: 39.99,
         oldPrice: 69.99,
         pegi: "18",
+        condition: "Goed",
         image: "https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mwii/MWII-REVEAL-TOUT.jpg",
         fallback: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
         description: "Intense multiplayer-ervaring met nauwkeurige wapenopmaken en snelle gevechten. Campaign volgt een professioneel team in geopolitieke chaos. Waarom wacht je? Moderne oorlogsvoering op z'n best!"
@@ -270,14 +271,35 @@ const money = new Intl.NumberFormat("nl-NL", { style: "currency", currency: "EUR
 const cartKey = "gamecycle-cart";
 
 function readCart() {
-    return JSON.parse(localStorage.getItem(cartKey) || "{}");
+    try {
+        const data = localStorage.getItem(cartKey);
+        const parsed = JSON.parse(data || "{}");
+        if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+            return {};
+        }
+        return parsed;
+    } catch (e) {
+        console.error("Failed to read cart from localStorage:", e);
+        return {};
+    }
 }
 
 function writeCart(cart) {
-    localStorage.setItem(cartKey, JSON.stringify(cart));
+    try {
+        localStorage.setItem(cartKey, JSON.stringify(cart));
+    } catch (e) {
+        console.error("Failed to save cart to localStorage:", e);
+        showToast("Winkelwagen kon niet worden opgeslagen.");
+    }
 }
 
 function addToCart(id) {
+    const product = gameProducts.find(item => item.id === id);
+    if (!product) {
+        console.error("addToCart called with invalid product id:", id);
+        showToast("Product niet gevonden.");
+        return;
+    }
     const cart = readCart();
     cart[id] = (cart[id] || 0) + 1;
     writeCart(cart);
@@ -302,7 +324,7 @@ function renderProducts(filter = "all") {
             card.className = "product-card reveal-card";
             card.innerHTML = `
                 <div class="product-photo-wrap">
-                    <img class="product-photo" src="${product.image}" alt="Coverfoto van ${product.title}" onerror="this.src='${product.fallback || product.image}'">
+                    <img class="product-photo" src="${product.image}" alt="Coverfoto van ${product.title}" onerror="if(!this.dataset.failed){this.dataset.failed='1';this.src='${product.fallback || product.image}'}">
                     <span class="shine"></span>
                 </div>
                 <div class="product-info">
@@ -313,7 +335,7 @@ function renderProducts(filter = "all") {
                     <p>${product.description}</p>
                     <dl>
                         <div><dt>Platform</dt><dd>${product.platform}</dd></div>
-                        <div><dt>Staat</dt><dd>${product.condition}</dd></div>
+                        <div><dt>Staat</dt><dd>${product.condition || "Onbekend"}</dd></div>
                         <div><dt>Levering</dt><dd>1-2 werkdagen</dd></div>
                     </dl>
                     <div class="price-row">
@@ -380,7 +402,7 @@ document.querySelectorAll("[data-filter]").forEach(button => {
 document.querySelector("[data-checkout-form]")?.addEventListener("submit", event => {
     const form = event.target;
     const itemsInput = form.querySelector("#orderItems");
-    if (!itemsInput) return;
+    const messageEl = form.querySelector("[data-order-message]");
 
     const cart = readCart();
     const orderLines = Object.entries(cart)
@@ -390,7 +412,13 @@ document.querySelector("[data-checkout-form]")?.addEventListener("submit", event
         })
         .filter(Boolean);
 
-    itemsInput.value = orderLines.join("\n");
+    if (orderLines.length === 0) {
+        event.preventDefault();
+        if (messageEl) messageEl.textContent = "Voeg eerst een game toe aan je winkelwagen.";
+        return;
+    }
+
+    if (itemsInput) itemsInput.value = orderLines.join("\n");
 });
 
 function showToast(text) {

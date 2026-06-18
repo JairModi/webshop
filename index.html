@@ -226,7 +226,7 @@
                     card.className = "product-card";
                     card.innerHTML = `
                         <div class="product-photo-wrap">
-                            <img class="product-photo" src="${product.image}" alt="Coverfoto van ${product.title}" onerror="this.src='${product.fallback || product.image}'">
+                            <img class="product-photo" src="${product.image}" alt="Coverfoto van ${product.title}" onerror="if(!this.dataset.failed){this.dataset.failed='1';this.src='${product.fallback || product.image}'}">
                             <span class="shine"></span>
                         </div>
                         <div class="product-info">
@@ -257,6 +257,11 @@
 
             cart.forEach((quantity, id) => {
                 const product = products.find(item => item.id === id);
+                if (!product) {
+                    console.error("Cart contains unknown product id:", id);
+                    cart.delete(id);
+                    return;
+                }
                 subtotal += product.price * quantity;
                 count += quantity;
                 const row = document.createElement("div");
@@ -321,32 +326,37 @@
             });
         });
 
-        document.getElementById("cartToggle").addEventListener("click", openCart);
-        document.getElementById("cartClose").addEventListener("click", () => {
+        document.getElementById("cartToggle")?.addEventListener("click", openCart);
+        document.getElementById("cartClose")?.addEventListener("click", () => {
             cartDrawer.classList.remove("open");
             cartDrawer.setAttribute("aria-hidden", "true");
         });
 
-        document.getElementById("applyDiscount").addEventListener("click", () => {
-            const code = document.getElementById("discount").value.trim().toUpperCase();
+        document.getElementById("applyDiscount")?.addEventListener("click", () => {
+            const discountInput = document.getElementById("discount");
             const message = document.getElementById("discountMessage");
+            if (!discountInput) return;
+            const code = discountInput.value.trim().toUpperCase();
             discountActive = code === "GAME10";
-            message.textContent = discountActive ? "Kortingscode toegepast: 10% korting." : "Gebruik code GAME10 voor 10% korting.";
+            if (message) message.textContent = discountActive ? "Kortingscode toegepast: 10% korting." : "Gebruik code GAME10 voor 10% korting.";
             updateCart();
         });
 
-        document.getElementById("checkoutForm").addEventListener("submit", event => {
-            event.preventDefault();
-            const message = document.getElementById("orderMessage");
-            if (cart.size === 0) {
-                message.textContent = "Voeg eerst een game toe aan je winkelwagen.";
-                return;
-            }
-            message.textContent = "Bedankt! Je bestelling is ontvangen. Je ontvangt een bevestiging per e-mail.";
-            cart.clear();
-            discountActive = false;
-            updateCart();
-        });
+        const checkoutForm = document.getElementById("checkoutForm");
+        if (checkoutForm) {
+            checkoutForm.addEventListener("submit", event => {
+                event.preventDefault();
+                const message = document.getElementById("orderMessage");
+                if (cart.size === 0) {
+                    if (message) message.textContent = "Voeg eerst een game toe aan je winkelwagen.";
+                    return;
+                }
+                if (message) message.textContent = "Bedankt! Je bestelling is ontvangen. Je ontvangt een bevestiging per e-mail.";
+                cart.clear();
+                discountActive = false;
+                updateCart();
+            });
+        }
 
         renderProducts();
         updateCart();
