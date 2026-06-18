@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
     <meta name="description" content="GameCycle verkoopt betaalbare tweedehands videogames voor PlayStation, Xbox, Nintendo Switch en PC in Nederland.">
     <link rel="stylesheet" href="Test.css">
     <title>GameCycle | Tweedehands Videogames</title>
@@ -217,6 +218,12 @@
         const cartItems = document.getElementById("cartItems");
         const formatter = new Intl.NumberFormat("nl-NL", { style: "currency", currency: "EUR" });
 
+        function escapeHtml(str) {
+            const div = document.createElement("div");
+            div.appendChild(document.createTextNode(String(str)));
+            return div.innerHTML;
+        }
+
         function renderProducts(filter = "all") {
             productGrid.innerHTML = "";
             products
@@ -224,25 +231,32 @@
                 .forEach(product => {
                     const card = document.createElement("article");
                     card.className = "product-card";
+                    const safeTitle = escapeHtml(product.title);
+                    const safePegi = escapeHtml(product.pegi);
+                    const safeDesc = escapeHtml(product.description);
+                    const safeCondition = escapeHtml(product.condition);
+                    const safeLanguage = escapeHtml(product.language);
+                    const safeImage = encodeURI(product.image);
+                    const safeFallback = encodeURI(product.fallback || product.image);
                     card.innerHTML = `
                         <div class="product-photo-wrap">
-                            <img class="product-photo" src="${product.image}" alt="Coverfoto van ${product.title}" onerror="this.src='${product.fallback || product.image}'">
+                            <img class="product-photo" src="${safeImage}" alt="Coverfoto van ${safeTitle}" onerror="this.onerror=null;this.src='${safeFallback}'">
                             <span class="shine"></span>
                         </div>
                         <div class="product-info">
                             <div class="product-title">
-                                <h3>${product.title}</h3>
-                                <span>PEGI ${product.pegi}</span>
+                                <h3>${safeTitle}</h3>
+                                <span>PEGI ${safePegi}</span>
                             </div>
-                            <p>${product.description}</p>
+                            <p>${safeDesc}</p>
                             <dl>
-                                <div><dt>Staat</dt><dd>${product.condition}</dd></div>
-                                <div><dt>Taal</dt><dd>${product.language}</dd></div>
+                                <div><dt>Staat</dt><dd>${safeCondition}</dd></div>
+                                <div><dt>Taal</dt><dd>${safeLanguage}</dd></div>
                                 <div><dt>Levering</dt><dd>1-2 werkdagen</dd></div>
                             </dl>
                             <div class="price-row">
                                 <div><strong>${formatter.format(product.price)}</strong><span>${formatter.format(product.oldPrice)}</span></div>
-                                <button type="button" data-id="${product.id}">In winkelwagen</button>
+                                <button type="button" data-id="${Number(product.id)}">In winkelwagen</button>
                             </div>
                         </div>
                     `;
@@ -263,13 +277,13 @@
                 row.className = "cart-item";
                 row.innerHTML = `
                     <div>
-                        <strong>${product.title}</strong>
-                        <span>${product.platform} - ${formatter.format(product.price)}</span>
+                        <strong>${escapeHtml(product.title)}</strong>
+                        <span>${escapeHtml(product.platform)} - ${formatter.format(product.price)}</span>
                     </div>
                     <div class="quantity">
-                        <button type="button" data-action="minus" data-id="${id}">-</button>
-                        <span>${quantity}</span>
-                        <button type="button" data-action="plus" data-id="${id}">+</button>
+                        <button type="button" data-action="minus" data-id="${Number(id)}">-</button>
+                        <span>${Number(quantity)}</span>
+                        <button type="button" data-action="plus" data-id="${Number(id)}">+</button>
                     </div>
                 `;
                 cartItems.appendChild(row);
@@ -331,7 +345,7 @@
             const code = document.getElementById("discount").value.trim().toUpperCase();
             const message = document.getElementById("discountMessage");
             discountActive = code === "GAME10";
-            message.textContent = discountActive ? "Kortingscode toegepast: 10% korting." : "Gebruik code GAME10 voor 10% korting.";
+            message.textContent = discountActive ? "Kortingscode toegepast: 10% korting." : "Ongeldige kortingscode.";
             updateCart();
         });
 
